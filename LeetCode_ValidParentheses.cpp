@@ -2,10 +2,43 @@
 //
 
 #include <iostream>
+#include <stack>
+using namespace std;
+
+bool isValid(string s) {
+	
+	stack<int> st;
+	for (auto c : s)
+	{
+		if (c == '(') {
+			st.push(')');
+			cout << "1" << "\n";
+		}
+		else if (c == '[') {
+			st.push(']');
+			cout << "2" << "\n";
+		}
+		else if (c == '{') {
+			st.push('}');
+			cout << "3" << "\n";
+		}
+		else if (!st.empty() && st.top() == c) {
+			st.pop();
+			cout << "4" << "\n";
+		}
+		else {
+			cout << "5" << "\n";
+			return false;
+		}
+	}
+
+	cout << "6" << "\n";
+	return st.empty();
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	cout << "Hello World! Result is " << isValid("([){}") << "\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

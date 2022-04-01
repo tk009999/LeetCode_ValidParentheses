@@ -31,3 +31,4 @@
 *.out
 *.app
 /.vs/LeetCode_ValidParentheses/v17
+/x64/Debug
